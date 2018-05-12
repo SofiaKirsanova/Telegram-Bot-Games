@@ -1,0 +1,22 @@
+import telebot
+import constants
+import hangman
+import TicTacToe
+
+bot = telebot.Telebot(constants.token)
+
+
+@bot.message_handler(content_types=["start"])
+def start(m):
+    keyboard = types.ReplyKeyboardMarkup(resize_keyboard=True)
+    keyboard.add(*[types.KeyboardButton(name) for name in ['Hangman', 'Tic Tac Toe']])
+    msg = bot.send_message(m.chat.id, 'What do you choose?',
+        reply_markup=keyboard)
+    bot.register_next_step_handler(msg, name)
+def name(m):
+    if (m.text == 'Hangman'):
+        bot.hangman.main #
+    elif (m.text == 'Tic Tac Toe'):
+        bot.TicTacToe.main
+name()
+#bot.polling()
