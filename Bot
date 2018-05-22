@@ -1,10 +1,7 @@
 import telebot
 import constants
-import hangman
-import TicTacToe
 
-bot = telebot.Telebot(constants.token)
-
+bot = telebot.TeleBot(constants.token)
 
 @bot.message_handler(content_types=["start"])
 def start(m):
@@ -14,9 +11,10 @@ def start(m):
         reply_markup=keyboard)
     bot.register_next_step_handler(msg, name)
 def name(m):
-    if (m.text == 'Hangman'):
-        bot.hangman.main #
-    elif (m.text == 'Tic Tac Toe'):
-        bot.TicTacToe.main
-name()
-#bot.polling()
+    if m.text == 'Hangman':
+        import hangman
+        hangman
+    elif m.text == 'Tic Tac Toe':
+        import TicTacToe_nm
+        TicTacToe_nm
+bot.polling()
