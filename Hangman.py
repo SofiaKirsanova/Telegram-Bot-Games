@@ -66,7 +66,7 @@ def Random(list):
 
 def Again():
         print('Again? (yes/no)')
-        inp = input().lower()
+        inp = input().lower() #строчная
         if inp == 'yes':
             return True
         else:
@@ -81,14 +81,14 @@ def Info(PICS, wrong, right, keyword):
     print()
     print('Word:', end = ' ')
     star = '*' * len(keyword)
-    for j in range(len(keyword)):
+    for j in range(len(keyword)): #range создание списка длины загаданного слова
         if keyword[j] in right:
             star = star[:j] + keyword[j] + star[j+1:]
     for letter in star:
         print(letter, end=' ')
     print()
 
-def Done(doneword):
+def Done(doneword): #попытка
     while True:
         print('Put a letter:')
         word = input().lower()
