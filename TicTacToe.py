@@ -53,13 +53,13 @@ def MoveC(field, signC):
 			copy[i] = signC
 			if Win(copy, signC):
 				return i
-	#занять центр
-	if field[5] == ' ':
-		return 5
 	#занять угол
 	slot = SlotRandom(field, [1, 3, 7, 9])
 	if slot != None:
 		return slot
+	#занять центр
+	if field[5] == ' ':
+		return 5
 	#занять боковушку
 	return SlotRandom(field, [2, 4, 6, 8])
 
