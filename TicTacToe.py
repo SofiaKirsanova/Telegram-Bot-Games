@@ -63,9 +63,9 @@ def MoveC(field, signC):
 	#занять боковушку
 	return SlotRandom(field, [2, 4, 6, 8])
 
-def SlotRandom(field, movesList):
+def SlotRandom(field, slots):
 	slot_free = []
-	for i in movesList:
+	for i in slots:
 		if field[i] == ' ':
 			slot_free.append(i)
 	if len(slot_free) != 0:
