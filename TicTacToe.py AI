@@ -1,0 +1,23 @@
+def MoveC(field, signC):
+#ИИ
+	for i in range(1, 10):
+		copy = Field2(field)
+		if copy[i] == ' ':
+			copy[i] = signP
+			if Win(copy, signP):
+				return i
+	for i in range(1, 10): #player`s next turn is win
+		copy = Field2(field)
+		if copy[i] == ' ':
+			copy[i] = signC
+			if Win(copy, signC):
+				return i
+	#угол
+	slot = SlotRandom(field, [1, 3, 7, 9])
+	if slot != None:
+		return slot
+	#центр
+	if field[5] == ' ':
+		return 5
+	#боковушки
+	return SlotRandom(field, [2, 4, 6, 8])
