@@ -1,0 +1,16 @@
+class Game:
+    turn_number = None
+    game_cnt = None
+    def Info(self): #инициализация
+        pass
+    def Read_input(self, turn):  # чтение введенной информации
+        pass
+    def Again(): #играть ли заново
+        print('Again?')
+        return input().lower().startswith('y')
+    def Check_end(self): #проверка конец ли игры
+        pass
+    def Random(self):
+        pass
+    def DrawBoard(self):
+        pass
