@@ -1,5 +1,7 @@
 import telebot
-import constants
+import constant
+import Hangman
+inmport TicTacToe
 
 bot = telebot.TeleBot(constants.token)
 
@@ -12,9 +14,7 @@ def start(m):
     bot.register_next_step_handler(msg, name)
 def name(m):
     if m.text == 'Hangman':
-        import hangman
-        hangman
+        Hangman.main()
     elif m.text == 'Tic Tac Toe':
-        import TicTacToe_nm
-        TicTacToe_nm
+        TicTacToe.main()
 bot.polling()
