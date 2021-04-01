@@ -1,2 +1,2 @@
 # Telegram-Bot-Games
-Проект по программированию 10 класс
+I created a Telegram bot that can play Tic-Tac-Toe and Hangman (Conway's Game of Life is not in this version) with user. Usually games on smartphones are apps, but I suggest playing games via a Telegram bot. These games do not take up memory and do not require time to load. Now the bot has two games, but it can be expanded to a few more pen-and-paper games that should be played between two players. In total, the bot can send no more than 30 messages per second and simultaneously play with no more than 50 users.
